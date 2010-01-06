@@ -58,3 +58,13 @@ function check_honeypot($approved) {
 	}
 	return $approved;
 }
+
+//the purpose of this function is to obfuscate 
+//the attributes/properties of the textarea tag
+function properties_jumbler_honeypot() {
+        $hash = get_option('hash_honeypot');
+        $properties[] .= ' name="'.$hash.'" ';
+        $properties[] .= ' style="display: none;" ';
+        shuffle($properties);
+        return $properties;
+}
