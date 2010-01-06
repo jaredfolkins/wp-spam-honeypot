@@ -20,7 +20,7 @@ if (is_admin()) {
 }
 
 function menu_honeypot() {
-	add_options_page('Honeypot Settings','Spam-Honeypot','administrator','jared folkins','options_page_honeypot');
+	add_options_page('Honeypot Settings','Spam-Honeypot','administrator',__FILE__,'options_page_honeypot');
 }
 
 function init_honeypot() {
@@ -36,7 +36,7 @@ function options_page_honeypot() {
 }
 
 function register_honeypot() {
-	add_option('hash_honeypot','default-hash');
+	add_option('hash_honeypot',sha1(uniqid(time(), true));
 }
 
 /*
